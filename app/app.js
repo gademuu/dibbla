@@ -11,11 +11,11 @@ var dibbla = angular.module('dibbla', [
 ]);
 
 dibbla.config(function($stateProvider, $urlRouterProvider){
- $urlRouterProvider.otherwise('/item');
+ $urlRouterProvider.otherwise('/create-item');
 
 $stateProvider
     .state('create-item', {
-        url: '/item',
+        url: '/create-item',
         templateUrl: 'item/create-item.html',
         controller: 'CreateItemController as vm'
     })
@@ -23,6 +23,12 @@ $stateProvider
       url: '/item-list',
       templateUrl: 'item/item-list.html',
       controller: 'ItemListController as vm'
+    })
+    .state('view-item', {
+      url: '/item',
+      templateUrl: 'item/view-item.html',
+      controller: 'ViewItemController as vm',
+      params: {item: null}
     })
 })
 })();

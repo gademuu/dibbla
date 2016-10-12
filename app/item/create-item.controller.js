@@ -7,6 +7,7 @@ angular.module('item')
     vm.createItem = createItem;
     vm.goToItemList = goToItemList;
 
+    //TODO skrivs över om man försöker skapa flera items
     function createItem(itemName, itemInfo){
       vm.item.itemName = itemName;
       vm.item.itemInfo = itemInfo;
