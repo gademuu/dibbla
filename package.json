@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gademuu/Dibbla.git"
+    "url": "git+https://github.com/gademuu/dibbla.git"
   },
   "keywords": [
     "trade"
@@ -22,7 +22,7 @@
   "author": "Herman Dahlén",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gademuu/Dibbla/issues"
+    "url": "https://github.com/gademuu/dibbla/issues"
   },
-  "homepage": "https://github.com/gademuu/Dibbla#readme"
+  "homepage": "https://github.com/gademuu/dibblaa#readme"
 }
