@@ -7,15 +7,17 @@ var externalModules = angular.module('externalModules', [
 
 var dibbla = angular.module('dibbla', [
  'externalModules',
+ 'item'
 ]);
 
 dibbla.config(function($stateProvider, $urlRouterProvider){
- $urlRouterProvider.otherwise('/home');
+ $urlRouterProvider.otherwise('/item');
 
 $stateProvider
-    .state('home', {
-        url: '/home',
-        templateUrl: 'home.html'
+    .state('create-item', {
+        url: '/item',
+        templateUrl: 'item/create-item.html',
+        controller: 'CreateItemController as vm'
     })
 })
 })();
