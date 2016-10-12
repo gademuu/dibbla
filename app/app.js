@@ -19,5 +19,10 @@ $stateProvider
         templateUrl: 'item/create-item.html',
         controller: 'CreateItemController as vm'
     })
+    .state('item-list', {
+      url: '/item-list',
+      templateUrl: 'item/item-list.html',
+      controller: 'ItemListController as vm'
+    })
 })
 })();
