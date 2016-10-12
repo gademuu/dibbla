@@ -1,2 +1,9 @@
-<h2>Create Item</h2>
-{{vm.item.name}}
+<h4>Crea item</h4>
+<form>
+  Item name:<br>
+  <input type="text" ng-model="vm.itemName"><br>
+  Item info:<br>
+  <input type="text" ng-model="vm.itemInfo">
+
+  <button type="submit" ng-click="vm.createItem(vm.itemName, vm.itemInfo)">Create Item</button>
+</form>
