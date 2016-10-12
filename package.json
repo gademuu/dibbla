@@ -5,13 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "http-server -a localhost -p 8000 -c-1 ./app -o"
+    "start": "http-server -a localhost -p 8000 -c-1 /app/#/home -o"
   },
   "dependencies": {
     "angular": "1.5.3",
-    "express": "~4.13.1",
     "http-server": "^0.6.1",
-    "bootstrap": "3.3.6",
     "angular-ui-router": "0.3.1"
   },
   "repository": {

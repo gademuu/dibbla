@@ -1,7 +1,12 @@
 (function () {
 'use strict';
+
+var externalModules = angular.module('externalModules', [
+  'ui.router'
+]);
+
 var dibbla = angular.module('dibbla', [
- 'ui.router'
+ 'externalModules',
 ]);
 
 dibbla.config(function($stateProvider, $urlRouterProvider){
@@ -12,6 +17,5 @@ $stateProvider
         url: '/home',
         templateUrl: 'home.html'
     })
-
 })
 })();
