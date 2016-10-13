@@ -16,17 +16,17 @@ dibbla.config(function($stateProvider, $urlRouterProvider){
 $stateProvider
     .state('create-item', {
         url: '/create-item',
-        templateUrl: 'item/create-item.html',
+        templateUrl: 'item/create/create-item.html',
         controller: 'CreateItemController as vm'
     })
     .state('item-list', {
       url: '/item-list',
-      templateUrl: 'item/item-list.html',
+      templateUrl: 'item/list/item-list.html',
       controller: 'ItemListController as vm'
     })
     .state('view-item', {
       url: '/item',
-      templateUrl: 'item/view-item.html',
+      templateUrl: 'item/view/view-item.html',
       controller: 'ViewItemController as vm',
       params: {item: null}
     })

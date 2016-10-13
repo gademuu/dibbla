@@ -5,11 +5,16 @@ angular.module('item')
     var vm = this;
     vm.items = itemService.getItems();
     vm.goToItem = goToItem;
+    vm.goToCreateItem = goToCreateItem;
 
     function goToItem(item) {
-      console.log(item);
       $state.go('view-item', {item: item})
     }
+
+    function goToCreateItem(){
+      $state.go('create-item');
+    }
+
 
   }]);
 })();
