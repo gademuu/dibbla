@@ -2,7 +2,7 @@
   "name": "dibbla",
   "version": "1.0.0",
   "description": "trading application",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "test",
     "start": "http-server -a localhost -p 8000 -c-1 /app/#/home -o"

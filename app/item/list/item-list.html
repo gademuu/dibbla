@@ -1,8 +1,8 @@
 <h4>Item list</h4>
 <div ng-repeat="item in vm.items track by $index">
 <div ng-click="vm.goToItem (item)">
-  <p> Name: {{item.itemName}}</p>
-  <p> Info: {{item.itemInfo}}</p>
+  <p> Name: {{item.title}}</p>
+  <p> Info: {{item.info}}</p>
   <hr>
 </div>
 </div>
