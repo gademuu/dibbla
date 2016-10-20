@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
- <head>
+<head>
   <meta charset="utf-8">
   <title>Dibbla</title>
   <script src="../node_modules/angular/angular.min.js"></script>
   <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
- </head>
- <body ng-app='dibbla'>
-     <div ui-view></div>
+  <link rel="stylesheet" href="css/global.css" media="screen" title="no title" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app='dibbla'>
+  <nav class="nav row">
+    <div class="flex">
+      <svg class="pointer" style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+      </svg>
+    </div>
+    <div class="flex line-center header">
+      Dibbla
+    </div>
+    <div class="flex line-right"></div>
+  </nav>
+  <div ui-view class="content"></div>
 
   <script src="app.js"></script>
   <!--Item-->
@@ -16,5 +29,5 @@
   <script src="item/list/item-list.controller.js"></script>
   <script src="item/view/view-item.controller.js"></script>
   <!--End of Item-->
- </body>
+</body>
 </html>
