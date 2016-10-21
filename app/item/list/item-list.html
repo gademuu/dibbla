@@ -1,9 +1,24 @@
-<h4>Item list</h4>
-<div ng-repeat="item in vm.items track by $index">
-<div ng-click="vm.goToItem (item)">
-  <p> Name: {{item.title}}</p>
-  <p> Info: {{item.info}}</p>
-  <hr>
+<div class="row line-center pointer" ng-repeat="item in vm.items track by $index" ng-click="vm.goToItem (item)">
+  <div class="flex card">
+    <img src="http://www.davidluke.com/wp-content/themes/david-luke/media/ims/placeholder720.gif" class="card-banner"></img>
+    <div class="card-top">
+      <span class="header">{{item.title}}</span>
+    </div>
+    <div class="card-toolbar"></div>
+    <p class="card-body line-left">{{ item.info | limitTo: 120 }}{{item.info.length > 120 ? '...' : ''}}</p>
+  </div>
 </div>
+<div class="card-body line-center" ng-if="vm.items.length<1">
+  Nothing to see here yet, why not create something, huh?
+
 </div>
-<button ng-click="vm.goToCreateItem()">Go to create item</button>
+
+<div class="fab-wrapper">
+  <div class="line-center">
+    <button type="submit" ng-class="{'pulse':vm.items.length<1}" class="fab pointer"  ng-click="vm.goToCreateItem()">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+      </svg>
+    </button>
+  </div>
+</div>
