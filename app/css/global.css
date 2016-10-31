@@ -133,17 +133,94 @@ input, textarea{
   }
 }
 
-  .slide{
-    animation-name: slide;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-duration: 1s;
-  }
+.slide{
+  animation-name: slide;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
 
-  @keyframes slide {
-    from {
-      margin-top: -100%;
-    }
-    to {
-    }
+@keyframes slide {
+  from {
+    margin-top: -100%;
   }
+  to {
+  }
+}
+
+/*login*/
+@keyframes intro {
+  0% {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    transform: scale(1.3,1.3);
+  }
+  100% {
+    transform: scale(1,1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+}
+
+.intro{
+  animation-name: intro;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-duration: 1.5s;
+}
+
+.login-background{
+  z-index: 101;
+  position: fixed;
+  padding-top: 60px;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background: url('../img/low-poly-texture-21.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-wrapper{
+  padding-top: 50px;
+  position: relative;
+  z-index: 102;
+  animation-duration: 1s;
+  color:#cacaca;
+}
+
+.login-footer{
+  color:#cacaca;
+  z-index: 102;
+  position: absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+}
+
+.login-input{
+  color:black;
+  padding: 10px;
+  text-align: center;
+  width: 250px;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(0.5);
+  }
+  80% {
+    transform: scale(1);
+  }
+}
+
+.spin{
+  animation-name: spin;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-duration:2s;
+}

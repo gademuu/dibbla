@@ -1,23 +1,23 @@
 (function () {
-'use strict';
+  'use strict';
 
-var externalModules = angular.module('externalModules', [
-  'ui.router'
-]);
+  var externalModules = angular.module('externalModules', [
+    'ui.router'
+  ]);
 
-var dibbla = angular.module('dibbla', [
- 'externalModules',
- 'item'
-]);
+  var dibbla = angular.module('dibbla', [
+    'externalModules',
+    'item'
+  ]);
 
-dibbla.config(function($stateProvider, $urlRouterProvider){
- $urlRouterProvider.otherwise('/create-item');
+  dibbla.config(function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/create-item');
 
-$stateProvider
+    $stateProvider
     .state('create-item', {
-        url: '/create-item',
-        templateUrl: 'item/create/create-item.html',
-        controller: 'CreateItemController as vm'
+      url: '/create-item',
+      templateUrl: 'item/create/create-item.html',
+      controller: 'CreateItemController as vm'
     })
     .state('item-list', {
       url: '/item-list',
@@ -30,5 +30,10 @@ $stateProvider
       controller: 'ViewItemController as vm',
       params: {item: null}
     })
-})
+    .state('login', {
+      url: '/login',
+      templateUrl: 'login.html',
+      controller: ''
+    })
+  })
 })();
