@@ -1,5 +1,5 @@
 (function(){
-angular.module('item')
+angular.module('user', [])
   .controller('LoginController',
   ['$state', '$timeout', function($state, $timeout){
     var vm = this;

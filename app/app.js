@@ -7,6 +7,7 @@
 
   var dibbla = angular.module('dibbla', [
     'externalModules',
+    'user',
     'item'
   ]);
 
