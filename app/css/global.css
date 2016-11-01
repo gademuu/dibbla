@@ -169,6 +169,24 @@ input, textarea{
   animation-duration: 1.5s;
 }
 
+@keyframes outro {
+  0% {
+    margin-top: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -100%;
+    opacity: 0;
+  }
+}
+
+.outro{
+  animation-name: outro;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
+
 .login-background{
   z-index: 101;
   position: fixed;
@@ -208,19 +226,4 @@ input, textarea{
   width: 250px;
   margin: 0 auto;
 }
-
-@keyframes spin {
-  0% {
-    transform: scale(0.5);
-  }
-  80% {
-    transform: scale(1);
-  }
-}
-
-.spin{
-  animation-name: spin;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-duration:2s;
-}
+/*End of login*/

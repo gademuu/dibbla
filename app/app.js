@@ -32,8 +32,8 @@
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'login.html',
-      controller: ''
+      templateUrl: 'login/login.html',
+      controller: 'LoginController as vm'
     })
   })
 })();
