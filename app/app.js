@@ -40,7 +40,7 @@
     .state('register-user', {
       url: '/registerUser',
       templateUrl: 'authentication/register/register-user.html',
-      controller: 'RegisterController'
+      controller: 'RegisterController as vm' 
     })
   })
 })();

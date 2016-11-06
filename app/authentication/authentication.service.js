@@ -1,5 +1,5 @@
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     angular
         .module('authentication', [])
@@ -7,8 +7,24 @@
 
     authenticationService.$inject = [];
     function authenticationService() {
-        this.exposedFn = exposedFn;
-        
-        function exposedFn() { }
-        }
+        var users = [
+            { name: 'herman', password: '123' },
+            { title: 'Carl', info: 'abc' }
+        ];
+
+        this.registerUser = function (user) {
+            users.push(user);
+            console.log(users);
+        };
+
+        this.getUsers = function () {
+            return users;
+        };
+
+        this.deleteUser = function (user) {
+            var index = users.indexOf(user);
+            users.splice(index, 1);
+        };
+
+    }
 })();   

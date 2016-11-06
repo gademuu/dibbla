@@ -8,12 +8,15 @@
     RegisterController.$inject = ['authenticationService'];
     function RegisterController(authenticationService) {
         var vm = this;
-
+        var user = {};
+        
         vm.registerUser = registerUser;
-
-        function registerUser(user) { 
-            // var user = {};
-            console.log('hej');
+     
+        function registerUser(name, password) { 
+            user.name = name;
+            user.password = password;
+            console.log('registered user:', user.name, ' password:', user.password);
+            authenticationService.registerUser(user);
         }
     }
 })();
