@@ -7,6 +7,7 @@ angular.module('user', [])
 
     vm.submitLogin = submitLogin;
     vm.goToItemList = goToItemList;
+    vm.goToRegisterUser = goToRegisterUser;
 
     function submitLogin() {
       vm.sumbitted = true;
@@ -14,8 +15,12 @@ angular.module('user', [])
       console.log('hejx');
     }
 
-    function goToItemList(){
+    function goToItemList() {
       $state.go('item-list');
+    }
+
+    function goToRegisterUser() {
+      $state.go('register-user');
     }
   }]);
 })();

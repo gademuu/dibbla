@@ -8,7 +8,8 @@
   var dibbla = angular.module('dibbla', [
     'externalModules',
     'user',
-    'item'
+    'item',
+    'authentication'
   ]);
 
   dibbla.config(function($stateProvider, $urlRouterProvider){
@@ -35,6 +36,11 @@
       url: '/login',
       templateUrl: 'login/login.html',
       controller: 'LoginController as vm'
+    })
+    .state('register-user', {
+      url: '/registerUser',
+      templateUrl: 'authentication/register/register-user.html',
+      controller: 'RegisterController'
     })
   })
 })();
