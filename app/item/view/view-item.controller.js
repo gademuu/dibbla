@@ -5,6 +5,12 @@ angular.module('item')
     var vm = this;
     vm.item = $stateParams.item;
     vm.goToItemList = goToItemList;
+    vm.deleteItem = deleteItem;
+
+    function deleteItem(item){
+      console.log('Item ', item);
+      itemService.deleteItem(item);
+    }
 
     function goToItemList(){
       $state.go('item-list');
