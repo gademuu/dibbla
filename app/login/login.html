@@ -1,0 +1,27 @@
+<div ng-class="{'outro':vm.sumbitted}">
+  <div class="login-wrapper slide line-center">
+    <img class="logo spin" src="../img/placegolder-logo.png" alt="" />
+    <h2 class="header ">Sign in</h2>
+    <form name="form" ng-submit="vm.submitLogin()">
+      <div class="row">
+        <div class="flex">
+          <label for="username" class="inline-flex">
+            <input type="text" required class="login-input" id="username" placeholder="Username">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="flex">
+          <label for="password" class="inline-flex">
+            <input type="password" required class="login-input" id="password" placeholder="password">
+          </label>
+        </div>
+      </div>
+      <input type="submit" name="name" value="Submit">
+    </form>
+  </div>
+  <div class="login-footer line-center">
+    Forgot password?
+  </div>
+  <div class="login-background intro" ng-class="{'outro':vm.sumbitted}"></div>
+</div>
