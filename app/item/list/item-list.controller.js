@@ -1,8 +1,9 @@
+'use strict';
 (function(){
 angular.module('item')
   .controller('ItemListController',
   ['$state', 'itemService', function($state, itemService){
-    var vm = this;
+    const vm = this;
     vm.items = itemService.getItems();
     vm.goToItem = goToItem;
     vm.goToCreateItem = goToCreateItem;

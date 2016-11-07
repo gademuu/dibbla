@@ -1,4 +1,5 @@
-var itemTable = [
+'use strict';
+const itemTable = [
     {
     "ItemId":"1",
     "UserId":"1",

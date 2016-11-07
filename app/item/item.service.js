@@ -1,8 +1,9 @@
+'use strict';
 (function(){
 angular.module('item', [])
   .service('itemService', function(){
 
-    var items = [
+    const items = [
       {title:'Cyckel', info: 'snabb och mysig'},
       {title:'Bil', info: 'inte sa snabb men den gar bra'},
   ];
@@ -16,7 +17,7 @@ angular.module('item', [])
     };
 
     this.deleteItem = function(item) {
-      var index = items.indexOf(item);
+      const index = items.indexOf(item);
       items.splice(index, 1);
     };
   });
