@@ -7,8 +7,8 @@
 
     RegisterController.$inject = ['authenticationService'];
     function RegisterController(authenticationService) {
-        var vm = this;
-        var user = {};
+        const vm = this;
+        const user = {};
         
         vm.registerUser = registerUser;
      

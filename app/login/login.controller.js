@@ -2,7 +2,7 @@
 angular.module('user', [])
   .controller('LoginController',
   ['$state', '$timeout', function($state, $timeout){
-    var vm = this;
+    const vm = this;
     vm.sumbitted = false;
 
     vm.submitLogin = submitLogin;

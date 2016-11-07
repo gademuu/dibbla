@@ -7,7 +7,7 @@
 
     authenticationService.$inject = [];
     function authenticationService() {
-        var users = [
+        const users = [
             { name: 'herman', password: '123' },
             { title: 'Carl', info: 'abc' }
         ];
@@ -22,7 +22,7 @@
         };
 
         this.deleteUser = function (user) {
-            var index = users.indexOf(user);
+            const index = users.indexOf(user);
             users.splice(index, 1);
         };
 

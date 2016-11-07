@@ -2,7 +2,7 @@
 angular.module('item')
   .controller('ViewItemController',
   ['$state', '$stateParams', 'itemService', function($state, $stateParams, itemService){
-    var vm = this;
+    const vm = this;
     vm.item = $stateParams.item;
     vm.goToItemList = goToItemList;
     vm.deleteItem = deleteItem;

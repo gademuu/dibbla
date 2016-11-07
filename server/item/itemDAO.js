@@ -1,4 +1,4 @@
-var itemTable = [
+const itemTable = [
     {
     "ItemId":"1",
     "UserId":"1",

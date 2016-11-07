@@ -1,11 +1,11 @@
 (function () {
   'use strict';
 
-  var externalModules = angular.module('externalModules', [
+  const externalModules = angular.module('externalModules', [
     'ui.router'
   ]);
 
-  var dibbla = angular.module('dibbla', [
+  const dibbla = angular.module('dibbla', [
     'externalModules',
     'user',
     'item',
