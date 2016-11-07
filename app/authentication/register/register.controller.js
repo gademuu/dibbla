@@ -6,8 +6,8 @@
         .module('authentication')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['authenticationService'];
-    function RegisterController(authenticationService) {
+    RegisterController.$inject = ['authenticationService', '$state'];
+    function RegisterController(authenticationService, $state) {
         const vm = this;
         const user = {};
         
@@ -18,6 +18,7 @@
             user.password = password;
             console.log('registered user:', user.name, ' password:', user.password);
             authenticationService.registerUser(user);
+            $state.go('item-list');
         }
     }
 })();

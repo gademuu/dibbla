@@ -8,7 +8,6 @@
 
   const dibbla = angular.module('dibbla', [
     'externalModules',
-    'user',
     'item',
     'authentication'
   ]);

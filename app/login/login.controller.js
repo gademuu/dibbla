@@ -1,8 +1,8 @@
 'use strict';
 (function(){
-angular.module('user', [])
+angular.module('authentication')
   .controller('LoginController',
-  ['$state', '$timeout', function($state, $timeout){
+  ['$state', '$timeout', 'authenticationService', function($state, $timeout, authenticationService){
     const vm = this;
     vm.sumbitted = false;
 
@@ -10,10 +10,24 @@ angular.module('user', [])
     vm.goToItemList = goToItemList;
     vm.goToRegisterUser = goToRegisterUser;
 
-    function submitLogin() {
+    //HERMAN FORTSÄTT HÄR....
+    function submitLogin(name, pasword) {
+      var user = {
+        name: name,
+        password: password
+      }
       vm.sumbitted = true;
-      $timeout( function(){ goToItemList(); }, 1000);
-      console.log('hejx');
+      var gettingLoggedIn = authenticationService.getUserByCredentials(user);
+      console.log(gettingLoggedIn);
+      // if (gettingLoggedIn){
+      // $timeout( function(){ 
+      //   goToItemList(); 
+      //   console.log(username, ' successfuly logged in.');
+      // }, 3000);
+      // }
+      // else{
+      //   console.log('Wrong username or password.');
+      // }
     }
 
     function goToItemList() {

@@ -2,22 +2,22 @@
   <div class="login-wrapper slide line-center">
     <img class="logo spin" src="../img/placegolder-logo.png" alt="" />
     <h2 class="header ">Sign in</h2>
-    <form name="form" ng-submit="vm.submitLogin()">
+    <form name="form" ng-submit="vm.submitLogin(name, password)">
       <div class="row">
         <div class="flex">
           <label for="username" class="inline-flex">
-            <input type="text" required class="login-input" id="username" placeholder="Username">
+            <input type="text" required class="login-input" ng-model="name" placeholder="Username">
           </label>
         </div>
       </div>
       <div class="row">
         <div class="flex">
           <label for="password" class="inline-flex">
-            <input type="password" required class="login-input" id="password" placeholder="password">
+            <input type="pasword" required class="login-input" ng-model="password" placeholder="password">
           </label>
         </div>
       </div>
-      <input type="submit" name="name" value="Submit">
+      <input type="submit" name="name" password="password" value="Submit">
         <!--SORRY CARL -->
       <button ng-click="vm.goToRegisterUser()">Register</button>
         <!--/SORRY CARL -->
