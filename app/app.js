@@ -1,6 +1,5 @@
 'use strict';
 (function () {
-  'use strict';
 
   const externalModules = angular.module('externalModules', [
     'ui.router'
