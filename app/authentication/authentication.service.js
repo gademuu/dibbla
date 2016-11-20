@@ -20,11 +20,10 @@
 
         this.registerUser = function (username, password) {
             var user = {};
-            var id = 
             user.username = username;
             user.password = password;
-            user.id = generateId();;
-            
+            user.id = generateId();
+
             users.push(user);
 
             return user;
