@@ -12,7 +12,7 @@
   ]);
 
   dibbla.config(function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/create-item');
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider
     .state('create-item', {

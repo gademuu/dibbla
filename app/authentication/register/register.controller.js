@@ -1,25 +1,31 @@
 'use strict';
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     angular
         .module('authentication')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['authenticationService', '$state'];
-    function RegisterController(authenticationService, $state) {
+    RegisterController.$inject = ['authenticationService', '$state', '$timeout'];
+    function RegisterController(authenticationService, $state, $timeout) {
         const vm = this;
-        const user = {};
-        
+
         vm.registerUser = registerUser;
-     
-        function registerUser(name, password) { 
-            user.name = name;
-            user.password = password;
-            console.log('registered user:', user.name, ' password:', user.password);
-            authenticationService.registerUser(user);
-            alert('Welcome ', user.name);
-            $state.go('item-list');
+
+        function registerUser(username, password) {
+            var user = authenticationService.registerUser(username, password);
+
+            if (user) {
+                $timeout(function () {
+                    console.log(username, ' successfuly registered');
+                    $state.go('item-list');
+                    
+                }, 1000);
+            }
+            else {
+                alert('User already exists.');
+            }
+
         }
     }
 })();

@@ -10,17 +10,28 @@
 
     function authenticationService() {
         const users = [
-            { id: 1, name: 'herman', password: '123' },
-            { id: 2, name: 'Carl', password: 'abc' }
+            { id: 1, username: 'herman', password: 'dibbla' },
+            { id: 2, username: 'Carl', password: 'dibbla' }
         ];
 
-        this.registerUser = function (user) {
+        function generateId() {
+            return ++users.filter(x => x.id).reverse()[0].id;
+        }
+
+        this.registerUser = function (username, password) {
+            var user = {};
+            var id = 
+            user.username = username;
+            user.password = password;
+            user.id = generateId();;
+            
             users.push(user);
-            console.log(users);
+
+            return user;
         };
 
-        this.getUserByCredentials = function (name, password) {
-            return users.find(x => x.name === name && x.password === password);
+        this.getUserByCredentials = function (username, password) {
+            return users.find(x => x.username === username && x.password === password);
         };
 
         this.getUsers = function () {
