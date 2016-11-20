@@ -1,41 +1,36 @@
 'use strict';
-(function(){
-angular.module('authentication')
-  .controller('LoginController',
-  ['$state', '$timeout', 'authenticationService', function($state, $timeout, authenticationService){
-    const vm = this;
-    vm.sumbitted = false;
+(function () {
+  angular.module('authentication')
+    .controller('LoginController',
+    ['$state', '$timeout', 'authenticationService', function ($state, $timeout, authenticationService) {
+      const vm = this;
+      vm.sumbitted = false;
 
-    vm.submitLogin = submitLogin;
-    vm.goToItemList = goToItemList;
-    vm.goToRegisterUser = goToRegisterUser;
+      vm.submitLogin = submitLogin;
+      vm.goToRegisterUser = goToRegisterUser;
 
-    //HERMAN FORTSÄTT HÄR....
-    function submitLogin(name, pasword) {
-      var user = {
-        name: name,
-        password: password
+      function submitLogin(username, password) {
+        vm.sumbitted = true;
+
+        var user = authenticationService.getUserByCredentials(username, password);
+
+        if (user) {
+          $timeout(function () {
+            goToItemList();
+            console.log(username, ' successfuly logged in.');
+          }, 1000);
+        }
+        else {
+          alert('Wrong username or password.');
+        }
       }
-      vm.sumbitted = true;
-      var gettingLoggedIn = authenticationService.getUserByCredentials(user);
-      console.log(gettingLoggedIn);
-      // if (gettingLoggedIn){
-      // $timeout( function(){ 
-      //   goToItemList(); 
-      //   console.log(username, ' successfuly logged in.');
-      // }, 3000);
-      // }
-      // else{
-      //   console.log('Wrong username or password.');
-      // }
-    }
 
-    function goToItemList() {
-      $state.go('item-list');
-    }
+      function goToItemList() {
+        $state.go('item-list');
+      }
 
-    function goToRegisterUser() {
-      $state.go('register-user');
-    }
-  }]);
+      function goToRegisterUser() {
+        $state.go('register-user');
+      }
+    }]);
 })();

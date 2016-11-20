@@ -18,6 +18,7 @@
             user.password = password;
             console.log('registered user:', user.name, ' password:', user.password);
             authenticationService.registerUser(user);
+            alert('Welcome ', user.name);
             $state.go('item-list');
         }
     }

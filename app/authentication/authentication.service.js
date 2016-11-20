@@ -7,10 +7,11 @@
         .service('authenticationService', authenticationService);
 
     authenticationService.$inject = [];
+
     function authenticationService() {
         const users = [
-            { name: 'herman', password: '123' },
-            { title: 'Carl', password: 'abc' }
+            { id: 1, name: 'herman', password: '123' },
+            { id: 2, name: 'Carl', password: 'abc' }
         ];
 
         this.registerUser = function (user) {
@@ -18,11 +19,8 @@
             console.log(users);
         };
 
-        //TODO Get user by Id
-        this.getUserByCredentials = function (user) {
-            var correct = user.indexOf(user);
-
-            return correct;
+        this.getUserByCredentials = function (name, password) {
+            return users.find(x => x.name === name && x.password === password);
         };
 
         this.getUsers = function () {
