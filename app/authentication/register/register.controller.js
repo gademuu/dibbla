@@ -18,7 +18,7 @@
             if (user) {
                 $timeout(function () {
                     console.log(username, ' successfuly registered');
-                    $state.go('item-list');
+                    $state.go('item-list', {user: user});
                     
                 }, 1000);
             }

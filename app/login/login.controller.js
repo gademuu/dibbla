@@ -12,11 +12,11 @@
       function submitLogin(username, password) {
         vm.sumbitted = true;
 
-        var user = authenticationService.getUserByCredentials(username, password);
+        let user = authenticationService.getUserByCredentials(username, password);
 
         if (user) {
           $timeout(function () {
-            goToItemList();
+            goToItemList(user);
             console.log(username, ' successfuly logged in.');
           }, 1000);
         }
@@ -25,8 +25,9 @@
         }
       }
 
-      function goToItemList() {
-        $state.go('item-list');
+      function goToItemList(user) {
+        console.log(user, 'gick vidare till item list')
+        $state.go('item-list', {user: user});
       }
 
       function goToRegisterUser() {

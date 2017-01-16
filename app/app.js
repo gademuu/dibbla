@@ -23,10 +23,11 @@
     .state('item-list', {
       url: '/item-list',
       templateUrl: 'item/list/item-list.html',
-      controller: 'ItemListController as vm'
+      controller: 'ItemListController as vm',
+      params: {user: null}
     })
     .state('view-item', {
-      url: '/item',
+      url: '/item:itemId',
       templateUrl: 'item/view/view-item.html',
       controller: 'ViewItemController as vm',
       params: {item: null}

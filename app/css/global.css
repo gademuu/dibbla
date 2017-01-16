@@ -56,13 +56,24 @@ input, textarea{
 .row {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 .flex {
   padding: 4px;
   margin:4px;
   flex: 1;
+  flex-basis: 100%;
 }
+
+.flex-x2 {
+  flex-basis: 200%;
+}
+@media screen and (min-width: 800px) {
+  .flex {
+    flex: 1;
+  }
+}
+
 ._25 {
   flex: 2.5;
 }
@@ -79,6 +90,7 @@ input, textarea{
   right:0;
   box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
   z-index: 100;
+  flex-wrap: nowrap!important;
 }
 
 .header{
