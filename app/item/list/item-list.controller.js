@@ -3,11 +3,11 @@
 angular.module('item')
   .controller('ItemListController',
   ['$state', '$stateParams', 'itemService', function($state, $stateParams, itemService){
-    const vm = this;
-    vm.items = itemService.getItems();
-    vm.goToItem = goToItem;
-    vm.goToCreateItem = goToCreateItem;
-    const user = $stateParams.user;
+    const vm = this
+    vm.items = itemService.getItems()
+    vm.goToItem = goToItem
+    vm.goToCreateItem = goToCreateItem
+    const user = $stateParams.user
     console.log(user, 'INNE I ITEM LIST')
 
     function goToItem(item) {
@@ -15,9 +15,9 @@ angular.module('item')
     }
 
     function goToCreateItem(){
-      $state.go('create-item');
+      $state.go('create-item')
     }
 
 
-  }]);
-})();
+  }])
+})()
