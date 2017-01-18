@@ -34,7 +34,7 @@
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'login/login.html',
+      templateUrl: 'authentication/login/login.html',
       controller: 'LoginController as vm'
     })
     .state('register-user', {
