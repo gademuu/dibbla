@@ -1,32 +1,29 @@
 <div ng-class="{'outro':vm.sumbitted}">
-  <div class="login-wrapper slide line-center">
-    <h2 class="header ">Sign in</h2>
-    <form name="form" ng-submit="vm.submitLogin(username, password)">
+  <div class="login-wrapper slide line-center card">
+
+    <div class="hero">
+      <img src="img/placegolder-logo.png" alt="">
+          <h2 class="header ">Sign in</h2>
+    </div>
+    <form name="form" class="login-form" ng-submit="vm.submitLogin(username, password)">
       <div class="row">
-        <div class="flex">
-          <label for="username" class="inline-flex">
             <input type="text" required class="login-input" ng-model="username" placeholder="Username">
-          </label>
-        </div>
+      </div>
+      <br>
+      <div class="row">
+            <input type="password" required class="login-input" ng-model="password" placeholder="Password">
       </div>
       <div class="row">
         <div class="flex">
-          <label for="password" class="inline-flex">
-            <input type="password" required class="login-input" ng-model="password" placeholder="Password">
-          </label>
+           <input class="btn" type="submit" name="username" password="password" value="Submit">
         </div>
       </div>
-      <input type="submit" name="username" password="password" value="Submit">
-      <button ng-click="vm.goToRegisterUser()">Register</button>
+      <br>
+      <a class="mock-link" ng-click="vm.goToRegisterUser()"><small>Not a member? Register</small></a>
     </form>
   </div>
   <div class="login-footer line-center">
     Forgot password?
   </div>
   <div class="login-background intro" ng-class="{'outro':vm.sumbitted}"></div>
-</div>
-
-
-<div class="login-wrapper">
-  
 </div>
