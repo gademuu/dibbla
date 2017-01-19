@@ -141,13 +141,13 @@ input, textarea {
 
 .btn{
     padding:0.5rem 1rem;
-    background: #46b2b6;
+    background: #b3c2bf;
     border-radius:2px;
     color: white;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
     margin-top:-4px;
-    border-bottom:4px solid #318588;
+    border-bottom:2px solid #577c7d;
 }
 
 .btn:active{
@@ -322,12 +322,13 @@ input, textarea {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #318588;
-    /*background: url('https://wallpaperscraft.com/image/sea_water_waves_ripples_depth_93831_602x339.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
+    background: #c0dfd9;
+
+    /*#c0dfd9
+    #e9ece5
+    #b3c2bf
+    #3b3a36*/
+    
 }
 
 .login-wrapper {
@@ -360,10 +361,10 @@ input, textarea {
 }
 
 .hero{
-    background: rgb(1,169,180);
-    background: -moz-linear-gradient(top, rgba(1,169,180,1) 0%, rgba(155,190,185,1) 100%);
+    background:#b3c2bf; 
+    /*background: -moz-linear-gradient(top, rgba(1,169,180,1) 0%, rgba(155,190,185,1) 100%);
     background: -webkit-linear-gradient(top, rgba(1,169,180,1) 0%,rgba(155,190,185,1) 100%);
-    background: linear-gradient(to bottom, rgba(1,169,180,1) 0%,rgba(155,190,185,1) 100%);
+    background: linear-gradient(to bottom, rgba(1,169,180,1) 0%,rgba(155,190,185,1) 100%);*/
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01a9b4', endColorstr='#9bbeb9',GradientType=0 );
     position: absolute;
     top: 0;
