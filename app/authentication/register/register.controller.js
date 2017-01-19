@@ -17,8 +17,8 @@
             if (user) {
                 $timeout(function () {
                     console.log(username, ' successfuly registered')
-                    //  $sessionStorage.user = user
-                    console.log('component ', user)
+                    $sessionStorage.user = user
+                    
                     $state.go('item-list')
                     
                 }, 1000)

@@ -9,10 +9,10 @@
 
     function authenticationService() {
         const users = new Set([
-            { id: 1, username: 'herman', password: 'dibbla', myItems: [{name: 'Magic cards', id: 1}, {name: 'Old moped', id: 2}] },
+            { id: 1, username: 'herman', password: 'dibbla', myItems: [{name: 'Magic cards', info:'They are fun to play with, some cards have a bit of a value.', id: 1}, {name: 'Old moped', info:'it has seen it best days..', id: 2}] },
             { id: 2, username: 'carl', password: 'dibbla', myItems: [{name: 'Laptop', id: 3}, {name: 'Screw driver', id: 4}]}
         ])
-        
+
         function generateId() {
             let usersArr = Array.from(users)
             let highestId = usersArr[usersArr.length - 1].id

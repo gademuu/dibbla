@@ -1,17 +1,20 @@
 (function () {
-'use strict'
+    'use strict'
 
-    function MenuController($sessionStorage) {
+    function MenuController($sessionStorage, $state) {
         const ctrl = this
 
         ctrl.user = $sessionStorage.user
+        ctrl.goToItem = goToItem
 
-        console.log(ctrl)
-        // console.log('component ', ctrl.user)
+        function goToItem(item) {
+            $state.go('view-item', { item: item })
+        }
+        console.log('component ', ctrl.user)
 
-     }
+    }
 
-     angular
+    angular
         .module('menu', [])
         .component('menu', {
             templateUrl: 'menu/menu.html',
