@@ -2,7 +2,8 @@
 (function () {
 
   const externalModules = angular.module('externalModules', [
-    'ui.router'
+    'ui.router',
+    'ngStorage'
   ]);
 
   const dibbla = angular.module('dibbla', [

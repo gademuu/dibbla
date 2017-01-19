@@ -6,24 +6,25 @@
         .module('authentication')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['authenticationService', '$state', '$timeout'];
-    function RegisterController(authenticationService, $state, $timeout) {
-        const vm = this;
+    RegisterController.$inject = ['authenticationService', '$sessionStorage', '$state', '$timeout'];
+    function RegisterController(authenticationService, $sessionStorage, $state, $timeout) {
+        const vm = this
 
-        vm.registerUser = registerUser;
+        vm.registerUser = registerUser
 
         function registerUser(username, password) {
-            var user = authenticationService.registerUser(username, password);
+            var user = authenticationService.registerUser(username, password)
 
             if (user) {
                 $timeout(function () {
-                    console.log(username, ' successfuly registered');
-                    $state.go('item-list', {user: user});
+                    console.log(username, ' successfuly registered')
+                    $sessionStorage.user = user
+                    $state.go('item-list', {user: user})
                     
-                }, 1000);
+                }, 1000)
             }
             else {
-                alert('User already exists.');
+                alert('User already exists.')
             }
 
         }
