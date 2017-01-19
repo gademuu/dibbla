@@ -1,5 +1,5 @@
-'use strict';
 (function () {
+'use strict';
 
     angular
         .module('authentication', [])
@@ -7,17 +7,17 @@
 
     authenticationService.$inject = []
 
-    function authenticationService  () {
+    function authenticationService() {
         const users = new Set([
-            { id: 1, username: 'herman', password: 'dibbla' },
-            { id: 2, username: 'Carl', password: 'dibbla' }
+            { id: 1, username: 'herman', password: 'dibbla', myItems: [{name: 'Magic cards', id: 1}, {name: 'Old moped', id: 2}] },
+            { id: 2, username: 'carl', password: 'dibbla', myItems: [{name: 'Laptop', id: 3}, {name: 'Screw driver', id: 4}]}
         ])
+        
+        function generateId() {
+            let usersArr = Array.from(users)
+            let highestId = usersArr[usersArr.length - 1].id
 
-        function generateId () {
-            let highestId = Array.from(users).length - 1
-            highestId++
-
-            return highestId
+            return ++highestId
         }
 
         this.registerUser = function (username, password) {
@@ -26,8 +26,6 @@
             user.password = password
             user.id = generateId()
 
-            users.add(user)
-            console.log(user, '\nl', users)
             return user
         }
 

@@ -1,6 +1,5 @@
-'use strict';
 (function () {
-    'use strict';
+'use strict'
 
     angular
         .module('authentication')
@@ -18,8 +17,9 @@
             if (user) {
                 $timeout(function () {
                     console.log(username, ' successfuly registered')
-                    $sessionStorage.user = user
-                    $state.go('item-list', {user: user})
+                    //  $sessionStorage.user = user
+                    console.log('component ', user)
+                    $state.go('item-list')
                     
                 }, 1000)
             }

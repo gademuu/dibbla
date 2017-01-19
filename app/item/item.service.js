@@ -1,24 +1,30 @@
-'use strict';
-(function(){
-angular.module('item', [])
-  .service('itemService', function(){
+'usetrict';
+(function () {
+  angular
+    .module('item', [])
+    .service('itemService', itemService)
+
+  itemService.$inject = ['$sessionStorage']
+
+  function itemService($sessionStorage) {
 
     const items = [
-      {title:'Cyckel', info: 'snabb och mysig'},
-      {title:'Bil', info: 'inte sa snabb men den gar bra'},
-  ];
-  
-    this.createItem = function(item) {
-      items.push(item);
-    };
+      { title: 'Bike', info: 'Its a fast bike, that you will love.' },
+      { title: 'Xbox360', info: 'Xbox360 with many games.' },
+    ]
 
-    this.getItems = function() {
-      return items;
-    };
+    this.createItem = function (item) {
+      items.push(item)
+    }
 
-    this.deleteItem = function(item) {
-      const index = items.indexOf(item);
-      items.splice(index, 1);
-    };
-  });
-})();
+    this.getItems = function () {
+      return items
+    }
+
+    this.deleteItem = function (item) {
+      const index = items.indexOf(item)
+      items.splice(index, 1)
+    }
+
+  }
+})()

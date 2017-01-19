@@ -1,14 +1,16 @@
-'use strict';
 (function(){
+'use strict';
+  
 angular.module('item')
   .controller('ItemListController',
-  ['$state', '$stateParams', 'itemService', function($state, $stateParams, itemService){
+  ['$state',  '$sessionStorage','itemService', function($state, $sessionStorage, itemService){
+    
     const vm = this
-    vm.items = itemService.getItems()
     vm.goToItem = goToItem
     vm.goToCreateItem = goToCreateItem
-    const user = $stateParams.user
-    console.log(user, 'INNE I ITEM LIST')
+    vm.items = itemService.getItems()
+    const user = $sessionStorage.user
+    console.log($sessionStorage)
 
     function goToItem(item) {
       $state.go('view-item', {item: item})

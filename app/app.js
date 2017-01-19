@@ -1,19 +1,21 @@
-'use strict';
 (function () {
+'use strict'
+  
 
   const externalModules = angular.module('externalModules', [
     'ui.router',
     'ngStorage'
-  ]);
+  ])
 
   const dibbla = angular.module('dibbla', [
     'externalModules',
     'item',
-    'authentication'
-  ]);
+    'authentication',
+    'menu'
+  ])
 
   dibbla.config(function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/login')
 
     $stateProvider
     .state('create-item', {
@@ -24,8 +26,7 @@
     .state('item-list', {
       url: '/item-list',
       templateUrl: 'item/list/item-list.html',
-      controller: 'ItemListController as vm',
-      params: {user: null}
+      controller: 'ItemListController as vm'
     })
     .state('view-item', {
       url: '/item:itemId',
@@ -44,4 +45,4 @@
       controller: 'RegisterController as vm' 
     })
   })
-})();
+})()

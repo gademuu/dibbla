@@ -2,36 +2,36 @@
 (function () {
   angular.module('authentication')
     .controller('LoginController',
-    ['$state', '$timeout', 'authenticationService', function ($state, $timeout, authenticationService) {
-      const vm = this;
-      vm.sumbitted = false;
+    ['$state', '$timeout', '$sessionStorage', 'authenticationService', function ($state, $timeout, $sessionStorage, authenticationService) {
+      const vm = this
+      $sessionStorage.$reset()
+      vm.sumbitted = false
 
-      vm.submitLogin = submitLogin;
-      vm.goToRegisterUser = goToRegisterUser;
+      vm.submitLogin = submitLogin
+      vm.goToRegisterUser = goToRegisterUser
 
       function submitLogin(username, password) {
-        vm.sumbitted = true;
+        vm.sumbitted = true
 
-        let user = authenticationService.getUserByCredentials(username, password);
+        let user = authenticationService.getUserByCredentials(username, password)
+        $sessionStorage.user = user
 
         if (user) {
           $timeout(function () {
-            goToItemList(user);
-            console.log(username, ' successfuly logged in.');
-          }, 1000);
+            goToItemList()
+          }, 1000)
         }
         else {
-          alert('Wrong username or password.');
+          alert('Wrong username or password.')
         }
       }
 
-      function goToItemList(user) {
-        console.log(user, 'gick vidare till item list')
-        $state.go('item-list', {user: user});
+      function goToItemList() {
+        $state.go('item-list')
       }
 
       function goToRegisterUser() {
-        $state.go('register-user');
+        $state.go('register-user')
       }
-    }]);
-})();
+    }])
+})()

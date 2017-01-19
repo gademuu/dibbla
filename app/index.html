@@ -28,12 +28,15 @@
             </svg>
         </div>
     </nav>
-    <div ng-class="{'open':openMenu}" class="side-menu" ng-include="'menu/menu.html'"></div>
+    <!--<div ng-class="{'open':openMenu}" class="side-menu" ng-include="'menu/menu.html'"></div>-->
+    <!--<menu ng-class="{'open':openMenu}" class="side-menu"></menu>-->
+
 
     <div class="row">
         <div class="flex"></div>
         <div class="flex _25">
-            <div ui-view class="content"></div>
+            <div ui-view class="content">
+            </div>
         </div>
         <div class="flex"></div>
     </div>
@@ -50,18 +53,18 @@
     <!-- Authentication -->
     <script src="authentication/authentication.service.js" /></script>
     <!--Register-->
-
     <script src="authentication/register/register.controller.js" /></script>
-
     <!--/Register-->
-
-    <!-- /Authentication -->
-
-
-
-    <!-- login -->
+        <!-- login -->
     <script src="authentication/login/login.controller.js"></script>
     <!--End of login -->
+    <!-- /Authentication -->
+
+    <script src="menu/menu.component.js"></script>
+
+
+
+
 </body>
 
 </html>
