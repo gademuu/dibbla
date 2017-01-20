@@ -29,6 +29,10 @@
             return user
         }
 
+        this.getUserById = function (userId) {
+            return Array.from(users).find(x => x.id === userId)
+        }
+
         this.getUserByCredentials = function (username, password) {
             return Array.from(users).find(x => x.username === username && x.password === password)
         }
