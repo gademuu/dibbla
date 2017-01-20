@@ -1,0 +1,29 @@
+<div ng-class="{'outro':vm.sumbitted}">
+  <div class="login-wrapper slide line-center card">
+
+    <div class="hero">
+      <img src="img/placegolder-logo.png" alt="">
+          <h2 class="header ">Sign in</h2>
+    </div>
+    <form name="form" class="login-form" ng-submit="vm.submitLogin(username, password)">
+      <div class="row">
+            <input type="text" required class="login-input" ng-model="username" placeholder="Username">
+      </div>
+      <br>
+      <div class="row">
+            <input type="password" required class="login-input" ng-model="password" placeholder="Password">
+      </div>
+      <div class="row">
+        <div class="flex">
+           <input class="btn" type="submit" name="username" password="password" value="Submit">
+        </div>
+      </div>
+      <br>
+      <a class="mock-link" ng-click="vm.goToRegisterUser()"><small>Not a member? Register</small></a>
+    </form>
+  </div>
+  <div class="login-footer line-center">
+    Forgot password?
+  </div>
+  <div class="login-background intro" ng-class="{'outro':vm.sumbitted}"></div>
+</div>

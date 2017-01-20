@@ -1,0 +1,20 @@
+  <div class="login-wrapper slide line-center">
+<h2 class="header ">Register user</h2>
+<form name="form" ng-submit="vm.registerUser(name, password)" style="background-color: #b3c2bf;">
+    <div class="row">
+    <div class="flex">
+        <label for="username" class="inline-flex">
+        <input type="text" required class="login-input" id="username" ng-model="name" placeholder="Username">
+        </label>
+    </div>
+    </div>
+    <div class="row">
+    <div class="flex">
+        <label for="password" class="inline-flex">
+        <input type="password" required class="login-input" id="password" ng-model="password" placeholder="Password">
+        </label>
+    </div>
+    </div>
+<input type="submit" name="name" value="Submit">
+</form>
+</div>
