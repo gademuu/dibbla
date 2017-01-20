@@ -3,20 +3,18 @@
     <div class="row inline-flex profile-hero">
           <img src="http://cdn07.dayviews.com/8/_u1/_u1/_u5/_u0/_u5/_u4/u1150548/15158_1213274983.jpg" class="profile-avatar">
           <div class="flex">
-            <h2>Username</h2>  
-                rating
-                location
-                email
+            <h2>{{vm.user.username}}</h2>  
+                {{vm.user.myItems.length}} item(s)
           </div>
     </div>
 
 
-    <div class="row profile-item"><!--repeat me-->
+    <div class="row profile-item pointer" ng-repeat="item in vm.user.myItems" ng-click="vm.goToItem(item)"><!--repeat me-->
       <div class="">
         <img src="http://img15.deviantart.net/a53d/i/2012/297/0/d/voidwielder_mtg_by_chase_sc2-d5iuw9j.jpg" class="profile-list-item-pic">
       </div>
       <div class="flex _25">
-        Item title
+        {{item.name}}
       </div>
     </div>
 

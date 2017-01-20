@@ -11,7 +11,8 @@
     'externalModules',
     'item',
     'authentication',
-    'menu'
+    'menu',
+    'user'
   ])
 
   dibbla.config(function($stateProvider, $urlRouterProvider){
@@ -47,6 +48,7 @@
     .state('user-profile', {
       url: '/user',
       templateUrl: 'user/user.html',
+      controller: 'UserController as vm',
       params: {user: null}
     })
   })
