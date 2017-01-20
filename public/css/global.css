@@ -91,6 +91,12 @@ input, textarea {
     .side-menu {
         width: 300px!important;
     }
+    .login-wrapper{
+        max-width: 60%!important; 
+    }
+    .profile-list-item-pic{
+        width: 100px!important;
+    }
 }
 
 ._25 {
@@ -201,6 +207,34 @@ input, textarea {
     to {}
 }
 
+/*profile*/
+.profile{
+    margin-top:5rem;
+}
+
+.profile-avatar{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    border:2px solid white;
+    margin: 0 auto;
+}
+
+.profile-hero{
+    text-align: center;
+    width: 100%;
+}
+
+.profile-item{
+    border:1px solid #cacaca;
+}
+
+.profile-list-item-pic{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+/*end profile*/
 
 /*side menu*/
 
@@ -238,8 +272,12 @@ input, textarea {
     background: rgba(0, 0, 0, 1);
 }
 
-.open {
-    left: 0;
+menu{
+    margin:0!important;
+}
+
+.open > .side-menu {
+    left: 0!important;
 }
 
 .user-header {
@@ -332,7 +370,6 @@ input, textarea {
 }
 
 .login-wrapper {
-    max-width: 60%;
     padding-top: 50px;
     margin: 0 auto;
     position: relative;
@@ -380,7 +417,7 @@ input, textarea {
 
 
 .hero img{
-    width: 25%;
+    width: 4em;
     height: auto;
     padding-top: 15px;
 }

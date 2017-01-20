@@ -44,5 +44,10 @@
       templateUrl: 'authentication/register/register-user.html',
       controller: 'RegisterController as vm' 
     })
+    .state('user-profile', {
+      url: '/user',
+      templateUrl: 'user/user.html',
+      params: {user: null}
+    })
   })
 })()

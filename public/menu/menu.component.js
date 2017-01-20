@@ -6,12 +6,15 @@
 
         ctrl.user = $sessionStorage.user
         ctrl.goToItem = goToItem
+        ctrl.goToUser = goToUser
 
         function goToItem(item) {
             $state.go('view-item', { item: item })
         }
-        console.log('component ', ctrl.user)
 
+        function goToUser() {
+            $state.go('user-profile', { user: ctrl.user})
+        }
     }
 
     angular

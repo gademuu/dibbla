@@ -1,5 +1,6 @@
+<div class="side-menu" ng-if="$ctrl.user">
 <div class="user-header">
-    <img class="avatar pulse" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAgNAAAAJDZjY2Y2ZjdkLWIwNzYtNDI4Yi05MGQ3LThkNmE1YjY0ZThiOQ.jpg">
+    <img class="avatar pulse" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAgNAAAAJDZjY2Y2ZjdkLWIwNzYtNDI4Yi05MGQ3LThkNmE1YjY0ZThiOQ.jpg" ng-click="$ctrl.goToUser()">
 </div>
 <h2 class="username">{{$ctrl.user.username}}</h2>
 <ul class="my-items">
@@ -19,3 +20,5 @@
         <div>Logout</div>
     </li>
 </ul>
+</div>
+
