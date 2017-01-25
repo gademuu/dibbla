@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body ng-app='dibbla'>
+<body ng-app='dibbla' ng-controller="MainController as vm">
     <nav class="nav row" ng-cloak>
         <div class="flex">
             <!--ui-sref="login"-->
@@ -19,7 +19,7 @@
                 <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
             </svg>
         </div>
-        <div class="flex line-center header">
+        <div class="flex line-center header pointer" ui-sref="item-list">
             Dibbla
         </div>
         <div class="flex line-right">
@@ -28,8 +28,8 @@
             </svg>
         </div>
     </nav>
-    <!--<div ng-class="{'open':openMenu}" class="side-menu" ng-include="'menu/menu.html'"></div>-->
-    <menu ng-class="{'open':openMenu}"></menu>
+
+    <menu ng-if="vm.showMenu()" ng-class="{'open':openMenu}"></menu>
 
     <div class="row">
         <div class="flex"></div>

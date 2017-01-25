@@ -3,10 +3,10 @@
 
     function MenuController($sessionStorage, $state) {
         const ctrl = this
-
-        ctrl.user = $sessionStorage.user
+        
         ctrl.goToItem = goToItem
         ctrl.goToUser = goToUser
+        ctrl.user = $sessionStorage.user
 
         function goToItem(item) {
             $state.go('view-item', { item: item })

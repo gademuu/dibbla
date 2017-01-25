@@ -15,6 +15,18 @@
     'user'
   ])
 
+  dibbla.controller('MainController', MainController)
+
+  MainController.$inject = ['$state']
+  function MainController ($state) {
+    const vm = this
+    vm.showMenu = showMenu
+    
+    function showMenu () {
+      return $state.current.name === 'login' ? false : true
+    }
+  }
+
   dibbla.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/login')
 
