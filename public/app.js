@@ -4,7 +4,8 @@
 
   const externalModules = angular.module('externalModules', [
     'ui.router',
-    'ngStorage'
+    'ngStorage',
+    'ngFileUpload'
   ])
 
   const dibbla = angular.module('dibbla', [
@@ -23,7 +24,8 @@
     vm.showMenu = showMenu
     
     function showMenu () {
-      return $state.current.name === 'login' ? false : true
+      let stateName = $state.current.name
+      return stateName === 'login' || stateName === 'register-user' ? false : true
     }
   }
 
