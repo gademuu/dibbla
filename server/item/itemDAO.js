@@ -1,23 +1,41 @@
-'use strict';
-const itemTable = [
-    {
-    "ItemId":"1",
-    "UserId":"1",
-    "Title":"Släpkärra",
-    "Info": "Släpkärra 3x4 m",
-    "Request": "Skottkärra",
-    "Location":"Uppsala"
-    }
-];
+const itemDao = require('./ItemDao')
 
-module.exports.create = function(newItem){
-  if(newItem.Title !== '' && newItem.UserId !== '') {
-    newItem.ItemId = itemId++ + '';
-    itemTable.push(newItem);
-    console.log('\n\n/Created new item: ' + newItem.Title);
-    //callback(newItem);
+const itemTable = []
+
+  // {
+  //     Id:'1',
+  //     UserId: '1',
+  //     Name:"Släpkärra",
+  //     Info: "Släpkärra 3x4 m",
+  //     Request: "Skottkärra",
+  //     Location: "Uppsala"
+  //   }
+
+itemDao.create = function (item, callback) {
+  let itemDto = {}
+  item.Id = generateId()
+  itemTable.push(item)
+
+  itemDto.Id = item.Id
+  itemDto.UserId = item.UserId
+  itemDto.Name = item.Name
+  itemDto.Info = item.Info
+  itemDto.Request = item.Request
+  itemDto.Location = item.Location
+  console.log('ItemDAO Created new item: ', itemDto)
+
+  callback(itemDto)
+}
+
+function generateId () {
+  if (itemTable.length === 0) {
+    return 1
   } else {
-    console.log('\n\n/ItemDao: could not create item with no title or userId');
-    //callback(null);
+    let highestId = itemTable[itemTable.length - 1].Id
+    return ++highestId
   }
 }
+
+
+module.exports = itemDao
+

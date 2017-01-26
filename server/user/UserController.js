@@ -2,7 +2,7 @@ const userController = require('./UserController')
 const userDao = require('./UserDao')
 
 userController.registerUser = function (body, callback) {
-  console.log('UserController is regestering new user...')
+  console.log('UserController is registering new user...')
   userDao.create(body, callback)
 }
 

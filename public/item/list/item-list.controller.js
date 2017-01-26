@@ -8,7 +8,8 @@ angular.module('item')
     const vm = this
     vm.goToItem = goToItem
     vm.goToCreateItem = goToCreateItem
-    vm.items = itemService.getItems()
+    // vm.items = itemService.getItems()
+    vm.items = []
     const user = $sessionStorage.user
     console.log($sessionStorage)
 

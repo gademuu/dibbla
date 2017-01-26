@@ -6,6 +6,7 @@ const jsonParser = bodyParser.json({limit: '50mb'})
 const app = express()
 
 const userController = require('./server/user/UserController')
+const itemController = require('./server/item/ItemController')
 
 
 app.use(express.static(__dirname + '/node_modules'))
@@ -20,8 +21,20 @@ app.get('/', (req, res) => {
 app.listen(3000, '0.0.0.0', function() {
 })
 
-// USER API
+// ITEM API
+app.post('/api/item', jsonParser, function (req, res) {
+  itemController.registerItem(req.body, function (result) {
+    if (result) {
+      res.statusCode = 200
+      res.json(result) 
+    } else {
+      res.statusCode = 400
+    }
+  })
+})
 
+
+// USER API
 app.post('/api/user', jsonParser, function (req, res) {
   userController.registerUser(req.body, function (result) {
     if (result) {

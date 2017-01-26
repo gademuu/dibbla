@@ -1,39 +1,37 @@
-'usetrict';
 (function () {
+  'usetrict';
+
   angular
     .module('item', [])
     .service('itemService', itemService)
 
-  itemService.$inject = ['$sessionStorage', 'authenticationService']
+  itemService.$inject = ['$sessionStorage', '$http', 'authenticationService']
 
-  function itemService($sessionStorage, authenticationService) {
+  function itemService($sessionStorage, $http, authenticationService) {
 
     const user = $sessionStorage.user
-    const items = [
-      { title: 'Bike', info: 'Its a fast bike, that you will love.' },
-      { title: 'Xbox360', info: 'Xbox360 with many games.' },
-    ]
+    const apiUrl = 'http://localhost:3000/api/item/'
 
-    this.createItem = function (item) {
-      item.id = generateId()
-      user.myItems.push(item)
+    this.registerItem = function (item) {
+      console.log('ITEM', item);
+      return $http.post(apiUrl, item)
     }
 
-    this.getItems = function () {
-      return items
-    }
+    // this.getItems = function () {
+    //   return items
+    // }
 
-    this.deleteItem = function (item) {
-      const index = user.myItems.indexOf(item)
-      user.myItems.splice(index, 1)
-    }
+    // this.deleteItem = function (item) {
+    //   const index = user.myItems.indexOf(item)
+    //   user.myItems.splice(index, 1)
+    // }
 
-    function generateId() {
-      let itemsArr = Array.from(items)
-      let highestId = itemsArr[itemsArr.length - 1].id
+    // function generateId() {
+    //   let itemsArr = Array.from(items)
+    //   let highestId = itemsArr[itemsArr.length - 1].id
 
-      return ++highestId
-    }
+    //   return ++highestId
+    // }
 
 
   }
