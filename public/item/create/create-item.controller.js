@@ -3,14 +3,17 @@
 
   angular.module('item')
     .controller('CreateItemController',
-    ['$state', 'itemService', 'Upload', function ($state, itemService, Upload) {
+    ['$state', '$sessionStorage', 'itemService', 'Upload', function ($state, $sessionStorage, itemService, Upload) {
       const vm = this
+      const user = $sessionStorage.user
+      
       vm.item = {}
       vm.itemPic = {}
       vm.registerItem = registerItem
       vm.goToItemList = goToItemList
 
       function registerItem() {
+        vm.item.UserId = user.Id
         Upload.base64DataUrl(vm.itemPic).then(
           function successCallback(base64Url) {
             itemService.registerItem(vm.item)

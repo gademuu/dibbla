@@ -6,12 +6,18 @@ angular.module('item')
   ['$state',  '$sessionStorage','itemService', function($state, $sessionStorage, itemService){
     
     const vm = this
+    const user = $sessionStorage.user
+    
     vm.goToItem = goToItem
     vm.goToCreateItem = goToCreateItem
-    // vm.items = itemService.getItems()
+    
     vm.items = []
-    const user = $sessionStorage.user
-    console.log($sessionStorage)
+
+    itemService.getItems().then(function (response) {
+      vm.items = response.data
+    }, function (response) {
+      console.log('Fail: ', response.status);
+    })
 
     function goToItem(item) {
       $state.go('view-item', {item: item})

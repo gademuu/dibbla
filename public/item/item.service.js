@@ -10,29 +10,15 @@
   function itemService($sessionStorage, $http, authenticationService) {
 
     const user = $sessionStorage.user
-    const apiUrl = 'http://localhost:3000/api/item/'
+    const apiUrl = 'http://localhost:3000/api/'
 
     this.registerItem = function (item) {
       console.log('ITEM', item);
-      return $http.post(apiUrl, item)
+      return $http.post(apiUrl + 'item/', item)
     }
 
-    // this.getItems = function () {
-    //   return items
-    // }
-
-    // this.deleteItem = function (item) {
-    //   const index = user.myItems.indexOf(item)
-    //   user.myItems.splice(index, 1)
-    // }
-
-    // function generateId() {
-    //   let itemsArr = Array.from(items)
-    //   let highestId = itemsArr[itemsArr.length - 1].id
-
-    //   return ++highestId
-    // }
-
-
+    this.getItems = function () {
+      return $http.get(apiUrl + 'items')
+    }
   }
 })()

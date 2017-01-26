@@ -2,24 +2,25 @@
   <div class="flex card">
     <img src="http://www.davidluke.com/wp-content/themes/david-luke/media/ims/placeholder720.gif" class="card-banner"></img>
     <div class="card-top">
-      <span class="header">{{item.title}}</span>
+      <span class="header">{{item.Name}}</span>
     </div>
     <div class="card-toolbar"></div>
-    <p class="card-body line-left">{{ item.info | limitTo: 120 }}{{item.info.length > 120 ? '...' : ''}}</p>
+    <p class="card-body line-left">Information: {{ item.Info | limitTo: 120 }}{{item.Info.length > 120 ? '...' : ''}}</p>
+    <p class="card-body line-left">Request: {{ item.Request | limitTo: 120 }}{{item.Request.length > 120 ? '...' : ''}}</p>
+    <p class="card-body line-left">Location: {{ item.Location }}</p>
   </div>
 </div>
-<div class="card-body line-center" ng-if="vm.items.length<1">
+<div class="card-body line-center" ng-if="vm.items.length < 1">
   Nothing to see here yet, why not create something, huh?
 
 </div>
 
 <div class="fab-wrapper">
   <div class="line-center">
-    <button type="submit" ng-class="{'pulse':vm.items.length<1}" class="fab pointer"  ng-click="vm.goToCreateItem()">
+    <button type="submit" ng-class="{'pulse':vm.items.length < 1}" class="fab pointer"  ng-click="vm.goToCreateItem()">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
           <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
       </svg>
     </button>
   </div>
 </div>
-<!--<menu ng-class="{'open':openMenu}" class="side-menu">-->

@@ -1,15 +1,23 @@
 const itemDao = require('./ItemDao')
 
-const itemTable = []
+const itemTable = [{
+      Id: 1,
+      UserId: 1,
+      Name:'Bike',
+      Info: 'A fast bike with new wheels',
+      Request: 'Car, newer model',
+      Location: 'Uppsala'
+    }]
 
-  // {
-  //     Id:'1',
-  //     UserId: '1',
-  //     Name:"Släpkärra",
-  //     Info: "Släpkärra 3x4 m",
-  //     Request: "Skottkärra",
-  //     Location: "Uppsala"
-  //   }
+itemDao.read = function (callback) {
+  let itemList = []
+
+  itemTable.forEach(function (item) {
+    itemList.push(item)
+  })
+
+  callback(itemList)
+}  
 
 itemDao.create = function (item, callback) {
   let itemDto = {}

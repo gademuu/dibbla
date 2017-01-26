@@ -33,6 +33,17 @@ app.post('/api/item', jsonParser, function (req, res) {
   })
 })
 
+app.get('/api/items', function (req, res) {
+  itemController.getItems(function (result) {
+    if (result) {
+      res.statusCode = 200
+      res.json(result)
+    } else {
+      res.statusCode = 404
+      res.send('No items found')
+    }
+  })
+})
 
 // USER API
 app.post('/api/user', jsonParser, function (req, res) {
