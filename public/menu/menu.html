@@ -2,7 +2,7 @@
 <div class="user-header">
     <img class="avatar pulse pointer" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAgNAAAAJDZjY2Y2ZjdkLWIwNzYtNDI4Yi05MGQ3LThkNmE1YjY0ZThiOQ.jpg" ng-click="$ctrl.goToUser()">
 </div>
-<h2 class="username">{{$ctrl.user.username}}</h2>
+<h2 class="username">{{$ctrl.user.Name}}</h2>
 <ul class="my-items">
     <li tabindex="0" ng-repeat="item in $ctrl.user.myItems" ng-click="$ctrl.goToItem(item)">
         <svg style="width:24px;height:24px" viewBox="0 0 24 24">

@@ -5,13 +5,13 @@
       <img src="img/placegolder-logo.png" alt="">
           <h2 class="header ">Sign in</h2>
     </div>
-    <form name="form" class="login-form" ng-submit="vm.submitLogin(username, password)">
+    <form name="form" class="login-form" ng-submit="vm.loginUser()">
       <div class="row">
-            <input type="text" required class="login-input" ng-model="username" placeholder="Username">
+            <input type="text" required class="login-input" ng-model="vm.user.Name" placeholder="Username">
       </div>
       <br>
       <div class="row">
-            <input type="password" required class="login-input" ng-model="password" placeholder="Password">
+            <input type="password" required class="login-input" ng-model="vm.user.Password" placeholder="Password">
       </div>
       <div class="row">
         <div class="flex">

@@ -11,27 +11,23 @@
 
         vm.registerUser = registerUser
         vm.profilePic = {}
+        vm.user = {}
 
-        function registerUser(username, password) {
+        function registerUser() {
             Upload.base64DataUrl(vm.profilePic).then(
-                
                 function successCallback(base64Url) {
-            console.log(vm.profilePic)
-                    
-                    console.log(base64Url)
-                    var user = authenticationService.registerUser(username, password)
-                    $sessionStorage.user = user
-                    if (user) {
-                        console.log(username, ' successfuly registered')
-                  
-                        $state.go('item-list')
-                    }
-                    else {
-                        alert('User already exists.')
-                    }
+                    authenticationService.registerUser(vm.user)
+                        .then(function (response) {
+                            console.log('Success: ', response.status)
+                            $sessionStorage.user = response.data
+                            $state.go('item-list')
+                    },
+                    function errorCallback(response){
+                        console.log('Fail: ', response.status)
+                    })
                 }, function errorCallback(response) {
-                    console.log('error', { error: { "message": response.data } })
-                })
+                    console.log('Fail: ', { error: { "message": response.data } })
+            })
         }
     }
 })();

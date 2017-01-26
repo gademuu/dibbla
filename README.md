@@ -10,6 +10,11 @@ To run:
 
 3. go to http://localhost:3000/
 
-4. login as username: herman, password: dibbla
+4. login as:
+
+username: herman
+password: dibbla 
+
+or create new user
 
 

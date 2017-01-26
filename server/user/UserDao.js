@@ -1,5 +1,9 @@
 const userDao = require('./UserDao')
-const userTable = new Set()
+const userTable = [{
+  Id: 1,
+  Name: 'herman',
+  Password: 'dibbla'
+}]
 /*
 {
   Id:,
@@ -12,26 +16,48 @@ const userTable = new Set()
 
 userDao.create = function (user, callback) {
   let userDto = {}
-  user.Id = 1
-
-  userTable.add(user)
+  user.Id = generateId()
+  userTable.push(user)
 
   userDto.Id = user.Id
   userDto.Name = user.Name
-
   console.log('UserDAO Created new user: ', user);
 
-
   callback(userDto)
+}
 
+userDao.get = function (user, callback) {
+  let userToFind = null
+  let userDto = {}
+
+  for (var i = 0; i < userTable.length; i++) {
+     if (userTable[i].Name === user.Name && userTable[i].Password === user.Password) {
+      userToFind = userTable[i]
+      break
+    } else {
+      console.log('UserDAO User not found')
+    }
+  }
+
+  if (userToFind != null) {
+    console.log('UserDAO Found user ', userToFind.Name)
+    userDto.Id = userToFind.Id
+    userDto.Name = userToFind.Name
+
+    callback(userDto)
+  } else {
+    callback(null)
+  }
 }
 
 
 function generateId () {
-  let usersArr = Array.from(userTable)
-  let highestId = usersArr[usersArr.length - 1].id
-
-  return ++highestId
+  if (userTable.length === 0) {
+    return 1
+  } else {
+    let highestId = userTable[userTable.length - 1].Id
+    return ++highestId
+  }
 }
 
 module.exports = userDao

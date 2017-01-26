@@ -5,32 +5,30 @@
     ['$state', '$timeout', '$sessionStorage', 'authenticationService', function ($state, $timeout, $sessionStorage, authenticationService) {
       const vm = this
       $sessionStorage.$reset()
+      vm.user = {}
       vm.sumbitted = false
-
-      vm.submitLogin = submitLogin
+      vm.loginUser = loginUser
       vm.goToRegisterUser = goToRegisterUser
 
-      function submitLogin(username, password) {
+      function loginUser () {
         vm.sumbitted = true
 
-        let user = authenticationService.getUserByCredentials(username, password)
-        $sessionStorage.user = user
-
-        if (user) {
-          $timeout(function () {
+        authenticationService.loginUser(vm.user)
+          .then(function (response) {
+            console.log('Login: ', response.status)
+            console.log('Login: ', response.data)
+            $sessionStorage.user = response.data
             goToItemList()
-          }, 1000)
-        }
-        else {
-          alert('Wrong username or password.')
-        }
+        }, function (response) {
+          console.log('Failed to login: ', response.status)
+        })
       }
 
-      function goToItemList() {
+      function goToItemList () {
         $state.go('item-list')
       }
 
-      function goToRegisterUser() {
+      function goToRegisterUser () {
         $state.go('register-user')
       }
     }])
