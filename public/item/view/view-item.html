@@ -2,7 +2,7 @@
   <div class="flex card">
     <img src="http://www.davidluke.com/wp-content/themes/david-luke/media/ims/placeholder720.gif" class="card-banner"></img>
     <div class="card-top">
-      <span class="header">{{vm.item.name}}</span>
+      <span class="header">{{vm.item.Name}}</span>
     </div>
     <div class="card-toolbar">
       <span class="pointer"  ng-click="vm.goToItemList()">
@@ -11,7 +11,9 @@
         </svg>
       </span>
     </div>
-    <p class="card-body center">{{ vm.item.info }}</p>
+    <p class="card-body center">{{ vm.item.Info }}</p>
+    <p class="card-body center">{{ vm.item.Request }}</p>
+    <p class="card-body center">{{ vm.item.Location }}</p>
     <button ng-click="vm.deleteItem(vm.item)">Delete</button>
   </div>
 </div>

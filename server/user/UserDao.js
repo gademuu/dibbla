@@ -1,9 +1,16 @@
 const userDao = require('./UserDao')
-const userTable = [{
-  Id: 1,
-  Name: 'herman',
-  Password: 'dibbla'
-}]
+const userTable = [
+  {
+    Id: 1,
+    Name: 'herman',
+    Password: 'dibbla'
+  },
+  {
+    Id: 2,
+    Name: 'carl',
+    Password: 'dibbla'
+  }
+]
 /*
 {
   Id:,
@@ -31,7 +38,7 @@ userDao.get = function (user, callback) {
   let userDto = {}
 
   for (var i = 0; i < userTable.length; i++) {
-     if (userTable[i].Name === user.Name && userTable[i].Password === user.Password) {
+    if (userTable[i].Name === user.Name && userTable[i].Password === user.Password) {
       userToFind = userTable[i]
       break
     } else {
@@ -51,7 +58,7 @@ userDao.get = function (user, callback) {
 }
 
 
-function generateId () {
+function generateId() {
   if (userTable.length === 0) {
     return 1
   } else {

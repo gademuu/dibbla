@@ -17,7 +17,8 @@
           .then(function (response) {
             console.log('Login: ', response.status)
             console.log('Login: ', response.data)
-            $sessionStorage.user = response.data
+            $sessionStorage.user = response.data[0]
+            $sessionStorage.myItems = response.data[1]
             goToItemList()
         }, function (response) {
           console.log('Failed to login: ', response.status)

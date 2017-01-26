@@ -5,6 +5,8 @@ angular.module('item')
   ['$state', '$stateParams', 'itemService', function($state, $stateParams, itemService){
     const vm = this
     vm.item = $stateParams.item
+    console.log('View Item', vm.item)
+    
     vm.goToItemList = goToItemList
     vm.deleteItem = deleteItem
 

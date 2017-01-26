@@ -7,6 +7,7 @@
         ctrl.goToItem = goToItem
         ctrl.goToUser = goToUser
         ctrl.user = $sessionStorage.user
+        ctrl.myItems = $sessionStorage.myItems
 
         function goToItem(item) {
             $state.go('view-item', { item: item })

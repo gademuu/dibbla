@@ -238,7 +238,8 @@ input, textarea {
 }
 
 .profile-item{
-    border:1px solid var(--white);
+    border:1px solid var(--black);
+    padding: 1%;
 }
 
 .profile-list-item-pic{
