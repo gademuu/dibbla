@@ -10,7 +10,7 @@ To run:
 
 3. go to http://localhost:3000/
 
-4. login as:
+Login as:
 
 username: herman
 password: dibbla 

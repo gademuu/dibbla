@@ -12,9 +12,12 @@
     vm.user = $stateParams.user
     vm.myItems = $sessionStorage.myItems
     vm.goToItem = goToItem
-    console.log('my items ', vm.myItems);
-    
+    // vm.profilePicture = vm.user.ProfilePicture.Image
 
+    console.log('my items ', vm.myItems)
+
+    console.log(vm.user)  
+  
     function goToItem(item) {
       $state.go('view-item', {item: item})
     }

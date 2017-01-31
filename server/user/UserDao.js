@@ -28,7 +28,8 @@ userDao.create = function (user, callback) {
 
   userDto.Id = user.Id
   userDto.Name = user.Name
-  console.log('UserDAO Created new user: ', user);
+  userDto.ProfilePicture = user.ProfilePicture
+  console.log('UserDAO Created new user: ', user)
 
   callback(userDto)
 }
@@ -50,6 +51,7 @@ userDao.get = function (user, callback) {
     console.log('UserDAO Found user ', userToFind.Name)
     userDto.Id = userToFind.Id
     userDto.Name = userToFind.Name
+    userDto.ProfilePicture = userToFind.ProfilePicture
 
     callback(userDto)
   } else {

@@ -10,12 +10,15 @@
         const vm = this
 
         vm.registerUser = registerUser
-        vm.profilePic = {}
+        vm.ProfilePicture = {}
         vm.user = {}
 
         function registerUser() {
-            Upload.base64DataUrl(vm.profilePic).then(
+            Upload.base64DataUrl(vm.ProfilePicture).then(
                 function successCallback(base64Url) {
+                    vm.ProfilePicture.Image = base64Url
+                    vm.user.ProfilePicture = vm.ProfilePicture
+
                     authenticationService.registerUser(vm.user)
                         .then(function (response) {
                             console.log('Success: ', response.status)

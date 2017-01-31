@@ -21,9 +21,9 @@
             <input type="password" required class="login-input" id="password" ng-model="vm.user.Password" placeholder="Password">
         </div>
         <div class="row">
-            <input type="file" class="login-input" id="profile" ngf-select accept="image/*" ng-model="vm.profilePic" placeholder="image">
+            <input type="file" class="login-input" id="profile" ngf-select accept="image/*" ngf-resize="{width: 200, height: 200, quality: .2, ratio: '1:1', centerCrop: true}" ng-model="vm.ProfilePicture" placeholder="image">
         </div>
-         <img ngf-thumbnail="vm.profilePic" class="thumb">
+         <img ngf-thumbnail="vm.ProfilePicture" class="thumb">
         <div class="row">
             <div class="flex">
                 <input class="btn" type="submit" name="name" value="Submit">
